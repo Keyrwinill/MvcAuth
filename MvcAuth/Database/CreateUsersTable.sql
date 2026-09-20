@@ -1,0 +1,15 @@
+﻿CREATE TABLE Users
+(
+    Oid UNIQUEIDENTIFIER NOT NULL PRIMARY KEY,
+    Account NVARCHAR(30) NOT NULL,
+    Email NVARCHAR(50) NOT NULL,
+    PasswordHash NVARCHAR(255) NOT NULL,
+    CreatedDate DATETIME2 NOT NULL,
+    FirstName NVARCHAR(30) NOT NULL,
+    LastName NVARCHAR(30) NOT NULL,
+    Birthday DATE NULL,
+    Role NVARCHAR(20) NOT NULL,
+
+    CONSTRAINT UQ_Users_Account UNIQUE (Account),
+    CONSTRAINT UQ_Users_Email UNIQUE (Email)
+);

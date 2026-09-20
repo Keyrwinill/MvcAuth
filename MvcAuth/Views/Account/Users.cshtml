@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MvcAuth.ViewModels.UserListItemViewModel>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>Users</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Account</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Birthday</th>
+            <th>Role</th>
+            <th>Created Date</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.Account</td>
+                <td>@user.Email</td>
+                <td>@user.FirstName @user.LastName</td>
+                <td>@user.Birthday?.ToString("yyyy-MM-dd")</td>
+                <td>@user.Role</td>
+                <td>@user.CreatedDate.ToString("yyyy-MM-dd HH:mm")</td>
+            </tr>
+        }
+    </tbody>
+</table>

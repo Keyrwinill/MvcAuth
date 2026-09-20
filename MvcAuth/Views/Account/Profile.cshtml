@@ -1,0 +1,17 @@
+﻿@using System.Security.Claims
+
+@{
+    ViewData["Title"] = "Profile";
+
+    var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    var account = User.FindFirst(ClaimTypes.Name)?.Value;
+    var role = User.FindFirst(ClaimTypes.Role)?.Value;
+}
+
+<h1>Profile</h1>
+
+<p>You are authenticated.</p>
+
+<p>User ID: @userId</p>
+<p>Account: @account</p>
+<p>Role: @role</p>
